@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hao123影视大全_官方高清影视社区_正版精品内容与创作者生态</title>
+<meta name="description" content="hao123影视大全官方网站，聚合高清正版影视内容与原创创作者社区，提供影视专题、深度解析、榜单推荐与企业动态，值得信赖的企业级视频品牌平台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111c2b'/%3E%3Cpolygon points='26,18 50,32 26,46' fill='%23f5b942'/%3E%3C/svg%3E">
+<style>
+:root{
+  --h123-ink:#111c2b;
+  --h123-ink-2:#1d2c40;
+  --h123-gold:#f5b942;
+  --h123-gold-deep:#d99a22;
+  --h123-paper:#f4f1ea;
+  --h123-white:#ffffff;
+  --h123-line:#dcd6c9;
+  --h123-mut:#5d6673;
+  --h123-red:#c8402f;
+  --h123-radius:14px;
+  --h123-stick:104px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--h123-stick);}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--h123-paper);
+  color:var(--h123-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+h1,h2,h3,h4{margin:0 0 .5em;line-height:1.3;font-weight:700;}
+p{margin:0 0 1em;}
+ul{margin:0;padding:0;list-style:none;}
+
+/* ===== 吸顶区: 公告 + 页头 ===== */
+.h123-stick-wrap{
+  position:sticky;top:0;z-index:60;
+}
+.h123-notice{
+  background:var(--h123-ink);
+  color:#f7e9c8;
+  font-size:13px;
+  letter-spacing:.02em;
+  padding:8px 20px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  text-align:center;
+}
+.h123-notice-badge{
+  background:var(--h123-gold);
+  color:var(--h123-ink);
+  font-weight:700;
+  border-radius:999px;
+  padding:1px 10px;
+  font-size:12px;
+  white-space:nowrap;
+}
+.h123-notice b{color:#fff;font-weight:600;}
+.h123-header{
+  background:rgba(244,241,234,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--h123-line);
+}
+.h123-header-inner{
+  max-width:1180px;margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;gap:22px;
+}
+.h123-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.01em;flex-shrink:0;}
+.h123-logo-mark{
+  width:38px;height:38px;border-radius:10px;background:var(--h123-ink);
+  display:grid;place-items:center;flex-shrink:0;
+}
+.h123-logo-mark svg{width:20px;height:20px;}
+.h123-logo small{display:block;font-size:11px;color:var(--h123-mut);font-weight:500;letter-spacing:.14em;}
+.h123-nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap;}
+.h123-nav a{
+  padding:7px 13px;border-radius:999px;font-size:14.5px;color:var(--h123-ink-2);
+  transition:background .2s,color .2s;white-space:nowrap;
+}
+.h123-nav a:hover,.h123-nav a:focus-visible{background:#e6e0d2;color:var(--h123-ink);outline:none;}
+.h123-search{
+  display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--h123-line);
+  border-radius:999px;padding:5px 6px 5px 14px;min-width:200px;
+}
+.h123-search input{
+  border:0;background:transparent;font-size:14px;width:130px;color:var(--h123-ink);outline:none;
+}
+.h123-search button{
+  border:0;background:var(--h123-ink);color:var(--h123-gold);border-radius:999px;
+  padding:6px 14px;font-size:13px;font-weight:600;
+}
+.h123-burger{
+  display:none;border:1px solid var(--h123-line);background:#fff;border-radius:10px;
+  width:42px;height:38px;font-size:19px;line-height:1;color:var(--h123-ink);
+}
+.h123-search-feedback{
+  max-width:1180px;margin:0 auto;padding:0 20px 8px;font-size:13px;color:var(--h123-red);
+  display:none;
+}
+.h123-search-feedback.is-on{display:block;}
+
+@media (max-width:900px){
+  .h123-header-inner{flex-wrap:wrap;gap:12px;padding:10px 16px;}
+  .h123-burger{display:block;margin-left:auto;}
+  .h123-nav{display:none;order:4;width:100%;margin-left:0;padding-top:4px;}
+  .h123-nav.is-open{display:flex;}
+  .h123-search{order:3;flex:1;min-width:0;}
+  .h123-search input{width:100%;flex:1;}
+  :root{--h123-stick:140px;}
+}
+
+/* ===== 首屏 (全幅主视觉，左上浮动文字) ===== */
+.h123-hero{
+  position:relative;overflow:hidden;border-radius:0 0 26px 26px;background:var(--h123-ink);
+  color:#fff;
+}
+.h123-hero-media{position:relative;aspect-ratio:16/8;min-height:340px;max-height:560px;}
+.h123-hero-media img{width:100%;height:100%;object-fit:cover;opacity:.92;}
+.h123-hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(17,28,43,.94) 0%,rgba(17,28,43,.72) 44%,rgba(17,28,43,.18) 100%);
+}
+.h123-hero-copy{
+  position:absolute;inset:0;z-index:2;display:flex;align-items:center;
+  padding:clamp(20px,4vw,64px);
+}
+.h123-hero-copy-inner{max-width:620px;}
+.h123-hero-tag{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.16em;
+  color:var(--h123-gold);border:1px solid rgba(245,185,66,.5);border-radius:999px;
+  padding:5px 14px;margin-bottom:18px;text-transform:uppercase;
+}
+.h123-hero h1{
+  font-size:clamp(30px,4.6vw,56px);letter-spacing:.01em;line-height:1.12;margin-bottom:.35em;
+}
+.h123-hero h1 em{
+  font-style:normal;color:var(--h123-gold);display:inline-block;
+}
+.h123-hero-lead{font-size:clamp(15px,1.5vw,17.5px);color:#e7e3d8;max-width:33em;margin-bottom:18px;}
+.h123-hero-intro{font-size:14.5px;color:#c6ccd6;max-width:36em;margin-bottom:26px;}
+.h123-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.h123-btn{
+  border:0;border-radius:999px;padding:11px 24px;font-size:14.5px;font-weight:600;
+  transition:transform .18s ease, background .2s, box-shadow .2s;
+}
+.h123-btn:hover{transform:translateY(-2px);}
+.h123-btn-gold{background:var(--h123-gold);color:var(--h123-ink);box-shadow:0 8px 22px rgba(245,185,66,.28);}
+.h123-btn-gold:hover{background:#ffcb5e;}
+.h123-btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.42);}
+.h123-btn-ghost:hover{border-color:var(--h123-gold);color:var(--h123-gold);}
+.h123-hero-stats{
+  display:flex;gap:clamp(20px,4vw,52px);flex-wrap:wrap;
+  margin-top:32px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);max-width:560px;
+}
+.h123-hero-stats div strong{display:block;font-size:clamp(20px,2.4vw,27px);color:var(--h123-gold);line-height:1.2;}
+.h123-hero-stats div span{font-size:12.5px;color:#b9c0cb;letter-spacing:.05em;}
+@media (max-width:720px){
+  .h123-hero-media{aspect-ratio:4/5;max-height:none;}
+  .h123-hero-copy{align-items:flex-end;padding-bottom:34px;}
+  .h123-hero-stats{gap:18px;}
+}
+
+/* ===== 通用区块 ===== */
+.h123-section{max-width:1180px;margin:0 auto;padding:clamp(44px,6vw,74px) 20px;}
+.h123-sec-head{margin-bottom:clamp(22px,3vw,36px);}
+.h123-eyebrow{
+  font-size:12.5px;letter-spacing:.18em;color:var(--h123-gold-deep);font-weight:700;
+  text-transform:uppercase;margin-bottom:10px;
+}
+.h123-section h2{font-size:clamp(23px,3vw,33px);letter-spacing:.005em;}
+.h123-section h2 .h123-accent{color:var(--h123-gold-deep);}
+.h123-section-intro{color:var(--h123-mut);max-width:52em;font-size:15px;}
+.h123-h3-title{font-size:19px;margin-bottom:10px;}
+.h123-panel{background:var(--h123-white);border:1px solid var(--h123-line);border-radius:var(--h123-radius);}
+.h123-soft{background:#ece7db;}
+
+/* 播放按钮 / 封面 */
+.h123-cover{position:relative;overflow:hidden;border-radius:12px;background:#0f1824;}
+.h123-cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.h123-cover::before{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.55) 100%);
+  z-index:1;
+}
+.h123-cover-ratio{aspect-ratio:16/9;}
+.h123-play{
+  position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;background:rgba(245,185,66,.94);
+  display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35);
+}
+.h123-play svg{width:18px;height:18px;margin-left:3px;}
+.h123-cover-time{
+  position:absolute;z-index:2;right:10px;bottom:10px;background:rgba(17,28,43,.82);
+  color:#fff;font-size:12px;padding:2px 8px;border-radius:6px;
+}
+.h123-cover-corner{
+  position:absolute;z-index:2;left:10px;top:10px;background:var(--h123-red);color:#fff;
+  font-size:11.5px;padding:2px 9px;border-radius:6px;letter-spacing:.04em;
+}
+.h123-card:hover .h123-cover img{transform:scale(1.045);}
+
+/* ===== 焦点区 + 视频列表 ===== */
+.h123-focus-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:26px;}
+.h123-focus-main .h123-cover{margin-bottom:0;}
+.h123-focus-body{padding-top:16px;}
+.h123-focus-body h3{font-size:clamp(20px,2.4vw,25px);margin-bottom:8px;}
+.h123-focus-body p{color:var(--h123-mut);font-size:14.5px;}
+.h123-focus-list{display:grid;gap:0;padding:6px 0;}
+.h123-focus-item{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:14px 0;border-bottom:1px dashed var(--h123-line);}
+.h123-focus-item:last-child{border-bottom:0;}
+.h123-focus-idx{font-weight:800;color:var(--h123-gold-deep);font-size:16px;line-height:1.5;}
+.h123-focus-item h4{font-size:15.5px;margin-bottom:4px;}
+.h123-focus-item span{font-size:12.5px;color:var(--h123-mut);}
+@media (max-width:860px){
+  .h123-focus-grid{grid-template-columns:minmax(0,1fr);}
+}
+
+.h123-video-list{display:grid;gap:18px;margin-top:34px;}
+.h123-video-row{
+  display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:20px;
+  padding:18px;border-radius:var(--h123-radius);background:#fff;border:1px solid var(--h123-line);
+  transition:box-shadow .22s ease,transform .22s ease;
+}
+.h123-video-row:hover{box-shadow:0 14px 34px rgba(17,28,43,.10);transform:translateY(-2px);}
+.h123-video-row .h123-cover{aspect-ratio:16/10;}
+.h123-video-info h3{font-size:17.5px;margin-bottom:7px;}
+.h123-video-desc{color:var(--h123-mut);font-size:14px;margin-bottom:10px;}
+.h123-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--h123-mut);margin-bottom:12px;}
+.h123-tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px;}
+.h123-tag{
+  font-size:12px;background:#efe9dc;color:#6b5a2e;border-radius:999px;padding:2px 10px;
+}
+.h123-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.h123-act{
+  border:1px solid var(--h123-line);background:#fff;border-radius:999px;padding:6px 14px;
+  font-size:13px;color:var(--h123-ink-2);display:inline-flex;align-items:center;gap:6px;
+  transition:background .18s,color .18s,border-color .18s;
+}
+.h123-act:hover{background:#f6f2e7;border-color:#c9bfa6;}
+.h123-act.is-liked{background:var(--h123-red);border-color:var(--h123-red);color:#fff;}
+.h123-act.is-saved{background:var(--h123-ink);border-color:var(--h123-ink);color:var(--h123-gold);}
+@media (max-width:760px){
+  .h123-video-row{grid-template-columns:minmax(0,1fr);}
+}
+
+/* ===== 品牌解析 (长文) ===== */
+.h123-parse{background:#fff;border-top:1px solid var(--h123-line);border-bottom:1px solid var(--h123-line);}
+.h123-parse-inner{max-width:1180px;margin:0 auto;padding:clamp(44px,6vw,72px) 20px;}
+.h123-parse-cols{columns:2;column-gap:42px;}
+.h123-parse-cols h3{font-size:17.5px;margin-top:1.1em;break-after:avoid;}
+.h123-parse-cols h3:first-child{margin-top:0;}
+.h123-parse-cols p{font-size:14.5px;color:#3d4755;margin-bottom:1em;}
+@media (max-width:820px){.h123-parse-cols{columns:1;}}
+
+/* ===== 专题 ===== */
+.h123-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.h123-topic{
+  background:#fff;border:1px solid var(--h123-line);border-radius:var(--h123-radius);
+  padding:22px;display:flex;flex-direction:column;gap:12px;transition:transform .22s ease,box-shadow .22s ease;
+}
+.h123-topic:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(17,28,43,.10);}
+.h123-topic-badge{
+  align-self:flex-start;font-size:11.5px;font-weight:700;letter-spacing:.08em;
+  color:var(--h123-gold-deep);background:#f7efd9;border-radius:6px;padding:2px 9px;
+}
+.h123-topic h3{font-size:18px;}
+.h123-topic p{font-size:13.8px;color:var(--h123-mut);margin-bottom:0;}
+.h123-topic ul{display:grid;gap:8px;margin-top:2px;}
+.h123-topic li{font-size:13.5px;color:#3d4755;padding-left:16px;position:relative;}
+.h123-topic li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--h123-gold);}
+.h123-topic-status{font-size:12.5px;color:var(--h123-mut);border-top:1px dashed var(--h123-line);padding-top:10px;margin-top:auto;}
+.h123-topic-status b{color:var(--h123-ink);}
+@media (max-width:940px){.h123-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (max-width:640px){.h123-topic-grid{grid-template-columns:minmax(0,1fr);}}
+
+/* ===== 作者区 (小型头像列表 + 双列) ===== */
+.h123-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.h123-author{
+  display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;
+  background:#fff;border:1px solid var(--h123-line);border-radius:var(--h123-radius);padding:20px;
+}
+.h123-avatar{
+  width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  font-weight:800;color:#fff;font-size:20px;flex-shrink:0;letter-spacing:.02em;
+}
+.h123-author h3{font-size:16.5px;margin-bottom:2px;}
+.h123-author-field{font-size:12.5px;color:var(--h123-gold-deep);font-weight:600;margin-bottom:8px;}
+.h123-author p{font-size:13.5px;color:var(--h123-mut);margin-bottom:10px;}
+.h123-author-meta{display:flex;gap:14px;font-size:12.5px;color:var(--h123-mut);flex-wrap:wrap;}
+.h123-author-meta b{color:var(--h123-ink);}
+.h123-author-open{
+  margin-top:12px;border:0;background:#f3eee2;color:var(--h123-ink);border-radius:999px;
+  padding:6px 14px;font-size:12.5px;font-weight:600;
+}
+.h123-author-open:hover{background:#e7dfcc;}
+@media (max-width:780px){.h123-author-grid{grid-template-columns:minmax(0,1fr);}}
+
+/* ===== 榜单 ===== */
+.h123-rank-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.h123-rank-col{background:#fff;border:1px solid var(--h123-line);border-radius:var(--h123-radius);padding:20px;}
+.h123-rank-col h3{font-size:16.5px;display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.h123-rank-col h3 span{
+  font-size:11px;font-weight:700;background:var(--h123-ink);color:var(--h123-gold);
+  border-radius:5px;padding:1px 7px;letter-spacing:.06em;
+}
+.h123-rank-col li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;padding:9px 0;border-bottom:1px dashed var(--h123-line);font-size:14px;}
+.h123-rank-col li:last-child{border-bottom:0;}
+.h123-rank-n{font-weight:800;color:#b7a97f;}
+.h123-rank-col li:nth-child(-n+3) .h123-rank-n{color:var(--h123-red);}
+.h123-rank-score{font-size:12.5px;color:var(--h123-mut);}
+@media (max-width:940px){.h123-rank-grid{grid-template-columns:minmax(0,1fr);}}
+
+/* ===== 评价 (双列短评) ===== */
+.h123-comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.h123-comment{
+  background:#fff;border:1px solid var(--h123-line);border-radius:var(--h123-radius);
+  padding:18px 20px;display:flex;flex-direction:column;gap:8px;
+}
+.h123-comment-top{display:flex;align-items:center;gap:10px;}
+.h123-avatar-sm{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;}
+.h123-comment-name{font-size:14px;font-weight:700;}
+.h123-comment-dim{font-size:11.5px;color:var(--h123-mut);}
+.h123-comment-stars{color:var(--h123-gold-deep);font-size:12.5px;letter-spacing:2px;margin-left:auto;}
+.h123-comment p{font-size:13.8px;color:#3d4755;margin-bottom:0;}
+@media (max-width:780px){.h123-comments{grid-template-columns:minmax(0,1fr);}}
+
+/* ===== 动态 + FAQ ===== */
+.h123-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:30px;align-items:start;}
+.h123-news{background:#fff;border:1px solid var(--h123-line);border-radius:var(--h123-radius);padding:22px;}
+.h123-news li{padding:13px 0;border-bottom:1px dashed var(--h123-line);}
+.h123-news li:last-child{border-bottom:0;padding-bottom:0;}
+.h123-news time{font-size:12px;color:var(--h123-gold-deep);font-weight:700;letter-spacing:.04em;display:block;margin-bottom:3px;}
+.h123-news h4{font-size:14.8px;margin-bottom:3px;}
+.h123-news p{font-size:13.3px;color:var(--h123-mut);margin-bottom:0;}
+.h123-faq details{
+  background:#fff;border:1px solid var(--h123-line);border-radius:12px;padding:0;margin-bottom:10px;overflow:hidden;
+}
+.h123-faq summary{
+  list-style:none;cursor:pointer;padding:15px 46px 15px 18px;font-weight:600;font-size:14.8px;
+  position:relative;transition:background .18s;
+}
+.h123-faq summary::-webkit-details-marker{display:none;}
+.h123-faq summary::after{
+  content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);
+  font-size:19px;color:var(--h123-gold-deep);font-weight:400;transition:transform .2s;
+}
+.h123-faq details[open] summary::after{content:"−";}
+.h123-faq summary:hover{background:#f9f5ec;}
+.h123-faq details p{padding:0 18px 16px;font-size:13.8px;color:var(--h123-mut);margin:0;}
+@media (max-width:860px){.h123-split{grid-template-columns:minmax(0,1fr);}}
+
+/* ===== 合作 + 投稿 ===== */
+.h123-partners{display:flex;gap:12px;flex-wrap:wrap;}
+.h123-partner{
+  flex:1 1 160px;background:#fff;border:1px solid var(--h123-line);border-radius:12px;
+  padding:18px 16px;text-align:center;font-weight:700;font-size:14.5px;color:var(--h123-ink-2);
+  transition:border-color .2s,color .2s;
+}
+.h123-partner span{display:block;font-size:11.5px;color:var(--h123-mut);font-weight:500;margin-top:3px;letter-spacing:.04em;}
+.h123-partner:hover{border-color:var(--h123-gold);color:var(--h123-gold-deep);}
+.h123-submit-band{
+  margin-top:30px;background:var(--h123-ink);color:#fff;border-radius:18px;
+  padding:clamp(24px,4vw,40px);display:flex;gap:22px;justify-content:space-between;align-items:center;flex-wrap:wrap;
+}
+.h123-submit-band h3{font-size:21px;color:#fff;margin-bottom:6px;}
+.h123-submit-band p{font-size:14px;color:#c6ccd6;margin-bottom:0;max-width:40em;}
+
+/* ===== 页脚 ===== */
+.h123-footer{background:#0d1621;color:#aab3c0;margin-top:20px;}
+.h123-footer-inner{max-width:1180px;margin:0 auto;padding:52px 20px 26px;}
+.h123-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:34px;}
+.h123-footer h4{font-size:13.5px;color:#fff;letter-spacing:.08em;margin-bottom:12px;}
+.h123-footer li{font-size:13.5px;padding:4px 0;}
+.h123-footer a:hover{color:var(--h123-gold);}
+.h123-footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px;margin-bottom:12px;}
+.h123-footer-brand .h123-logo-mark{background:var(--h123-gold);}
+.h123-footer-brand .h123-logo-mark svg polygon{fill:var(--h123-ink);}
+.h123-footer p{font-size:13px;color:#8d97a5;line-height:1.8;}
+.h123-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.10);padding-top:20px;display:flex;
+  justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#7b8593;
+}
+@media (max-width:820px){.h123-footer-grid{grid-template-columns:1fr 1fr;}}
+
+/* ===== 弹窗 / Toast / 回顶 ===== */
+.h123-modal-mask{
+  position:fixed;inset:0;background:rgba(13,22,33,.62);z-index:120;
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+.h123-modal-mask.is-on{display:flex;}
+.h123-modal{
+  background:var(--h123-paper);border-radius:18px;max-width:520px;width:100%;
+  padding:26px;max-height:82vh;overflow:auto;position:relative;
+  box-shadow:0 30px 70px rgba(0,0,0,.4);
+}
+.h123-modal h3{font-size:19px;margin-bottom:10px;}
+.h123-modal p{font-size:14px;color:#3d4755;}
+.h123-modal-close{
+  position:absolute;right:14px;top:12px;border:0;background:transparent;font-size:22px;
+  color:var(--h123-mut);line-height:1;
+}
+.h123-modal-close:hover{color:var(--h123-red);}
+.h123-modal-list{display:grid;gap:10px;margin-top:6px;}
+.h123-modal-field{font-size:13px;color:var(--h123-mut);margin-bottom:2px;}
+.h123-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,16px);
+  background:var(--h123-ink);color:var(--h123-gold);padding:11px 22px;border-radius:999px;
+  font-size:13.5px;font-weight:600;z-index:200;opacity:0;pointer-events:none;
+  transition:opacity .25s,transform .25s;box-shadow:0 12px 30px rgba(0,0,0,.3);
+}
+.h123-toast.is-on{opacity:1;transform:translate(-50%,0);}
+.h123-top{
+  position:fixed;right:18px;bottom:24px;z-index:100;width:46px;height:46px;border-radius:50%;
+  border:0;background:var(--h123-ink);color:var(--h123-gold);font-size:18px;
+  display:none;place-items:center;box-shadow:0 10px 26px rgba(17,28,43,.3);
+}
+.h123-top.is-on{display:grid;}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶：公告条 + 页头 -->
+<div class="h123-stick-wrap">
+  <div class="h123-notice">
+    <span class="h123-notice-badge">官方发布</span>
+    <span><b>hao123影视大全</b> 11月「冬日影像季」专题已上线 12 部高清正版片源 · 创作者投稿通道开放 · 第 7 期口碑榜于 11 月 20 日更新</span>
+  </div>
+  <header class="h123-header">
+    <div class="h123-header-inner">
+      <a class="h123-logo" href="#h123-top">
+        <span class="h123-logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><polygon points="24,16 52,32 24,48" fill="#f5b942"/></svg>
+        </span>
+        <span>hao123影视大全<small>OFFICIAL VIDEO PLATFORM</small></span>
+      </a>
+      <button class="h123-burger" id="h123Burger" aria-label="展开导航" aria-expanded="false" aria-controls="h123Nav">☰</button>
+      <nav class="h123-nav" id="h123Nav" aria-label="主导航">
+        <a href="#h123-focus">焦点推荐</a>
+        <a href="#h123-parse">品牌解析</a>
+        <a href="#h123-topics">影视专题</a>
+        <a href="#h123-authors">创作者</a>
+        <a href="#h123-rank">口碑榜</a>
+        <a href="#h123-voices">用户评价</a>
+        <a href="#h123-news">企业动态</a>
+      </nav>
+      <div class="h123-search">
+        <input id="h123SearchInput" type="search" placeholder="搜索影片 / 创作者 / 专题" aria-label="站内搜索">
+        <button type="button" id="h123SearchBtn">搜索</button>
+      </div>
+    </div>
+    <div class="h123-search-feedback" id="h123SearchFeedback" role="status" aria-live="polite"></div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="h123-hero" id="h123-top">
+  <div class="h123-hero-media">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 800'%3E%3Cdefs%3E%3ClinearGradient id='hg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23122440'/%3E%3Cstop offset='1' stop-color='%233a2a1c'/%3E%3C/linearGradient%3E%3ClinearGradient id='gold' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23f5b942'/%3E%3Cstop offset='1' stop-color='%23d99a22'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='800' fill='url(%23hg)'/%3E%3Ccircle cx='1290' cy='210' r='300' fill='%23f5b942' opacity='0.10'/%3E%3Ccircle cx='1290' cy='210' r='190' fill='%23f5b942' opacity='0.08'/%3E%3Cg opacity='0.9'%3E%3Crect x='880' y='150' width='520' height='300' rx='18' fill='%230e1a2b' stroke='%23f5b942' stroke-width='2'/%3E%3Cpolygon points='1100,240 1220,300 1100,360' fill='url(%23gold)'/%3E%3Crect x='910' y='400' width='460' height='10' rx='5' fill='%2324344a'/%3E%3Crect x='910' y='420' width='300' height='10' rx='5' fill='%2324344a'/%3E%3C/g%3E%3Cg opacity='0.5'%3E%3Crect x='880' y='510' width='150' height='110' rx='12' fill='%231b2a3f'/%3E%3Crect x='1050' y='510' width='150' height='110' rx='12' fill='%231b2a3f'/%3E%3Crect x='1220' y='510' width='150' height='110' rx='12' fill='%231b2a3f'/%3E%3C/g%3E%3Cg opacity='0.35'%3E%3Ccircle cx='1130' cy='660' r='6' fill='%23f5b942'/%3E%3Ccircle cx='1180' cy='660' r='6' fill='%23f5b942'/%3E%3Ccircle cx='1230' cy='660' r='6' fill='%23f5b942'/%3E%3C/g%3E%3C/svg%3E" alt="hao123影视大全首屏主视觉：深色放映厅界面中播放键与黄金色调的影视画面组合" width="1600" height="800">
+  </div>
+  <div class="h123-hero-copy">
+    <div class="h123-hero-copy-inner">
+      <span class="h123-hero-tag">官网 · 品牌 · 高清正版</span>
+      <h1><em>hao123影视大全</em></h1>
+      <p class="h123-hero-lead">一个把「找片」变简单、把「看好片」变稳定的高清影视社区。企业级内容体系与原创创作者共同支撑，让每一次点开都值得。</p>
+      <p class="h123-hero-intro">作为深耕影视聚合与内容服务多年的品牌平台，hao123影视大全官方网站坚持正版、高清、专业的内容标准，围绕影视专题、深度解析、创作者短片与口碑榜单构建多元内容生态，为观众与创作者搭建值得信赖的交流空间。</p>
+      <div class="h123-hero-actions">
+        <a class="h123-btn h123-btn-gold" href="#h123-focus">进入焦点推荐</a>
+        <a class="h123-btn h123-btn-ghost" href="#h123-topics">浏览影视专题</a>
+        <button class="h123-btn h123-btn-ghost" type="button" id="h123SubmitOpen">创作者投稿</button>
+      </div>
+      <div class="h123-hero-stats">
+        <div><strong>12,600+</strong><span>高清正版片源条目</span></div>
+        <div><strong>480 位</strong><span>签约与入驻创作者</span></div>
+        <div><strong>9 年</strong><span>持续运营的品牌社区</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 焦点推荐 + 视频列表 -->
+<section class="h123-section" id="h123-focus">
+  <div class="h123-sec-head">
+    <div class="h123-eyebrow">FOCUS / 本周焦点</div>
+    <h2>焦点推荐 · 值得先看的<span class="h123-accent">精品内容</span></h2>
+    <p class="h123-section-intro">由 hao123影视大全 官方编辑团队与社区创作者共同推选，覆盖剧集解析、纪录片、短片创作与幕后记录。以下内容均为高清正版资源或创作者授权原创作品。</p>
+  </div>
+
+  <div class="h123-focus-grid">
+    <article class="h123-focus-main h123-card">
+      <div class="h123-cover h123-cover-ratio">
+        <span class="h123-cover-corner">官方首推</span>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23204160'/%3E%3Cstop offset='1' stop-color='%230d1a2a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23f1)'/%3E%3Ccircle cx='620' cy='110' r='120' fill='%23f5b942' opacity='0.16'/%3E%3Crect x='70' y='90' width='260' height='270' rx='14' fill='%231a2c42' stroke='%233a5570'/%3E%3Crect x='100' y='130' width='200' height='12' rx='6' fill='%233a5570'/%3E%3Crect x='100' y='160' width='150' height='12' rx='6' fill='%233a5570'/%3E%3Crect x='100' y='215' width='200' height='70' rx='8' fill='%23f5b942' opacity='0.22'/%3E%3Crect x='380' y='120' width='350' height='18' rx='9' fill='%23f5b942' opacity='0.75'/%3E%3Crect x='380' y='160' width='280' height='12' rx='6' fill='%233a5570'/%3E%3Crect x='380' y='190' width='320' height='12' rx='6' fill='%233a5570'/%3E%3Crect x='380' y='220' width='200' height='12' rx='6' fill='%233a5570'/%3E%3Crect x='380' y='290' width='120' height='60' rx='10' fill='%23c8402f' opacity='0.8'/%3E%3Crect x='520' y='290' width='120' height='60' rx='10' fill='%232a4159'/%3E%3C/svg%3E" alt="焦点推荐《长夜片场》剧集解析专题的深色放映界面封面" width="800" height="450">
+        <span class="h123-play" aria-hidden="true"><svg viewBox="0 0 20 20"><polygon points="2,1 19,10 2,19" fill="#111c2b"/></svg></span>
+        <span class="h123-cover-time">18:42</span>
+      </div>
+      <div class="h123-focus-body">
+        <h3>《长夜片场》：一部剧集的三十六个镜头拆解</h3>
+        <p>从布光、调度到剪辑节奏，逐帧拆解本季热度最高的剧集如何用有限预算做出电影质感。专题含 3 集正片解析与 2 段创作幕后访谈，是理解当代国产剧制作水准的一手样本。</p>
+        <div class="h123-meta">
+          <span>创作者：光影拆解局</span>
+          <span>播放 42.8 万</span>
+          <span>收藏 1.9 万</span>
+        </div>
+        <div class="h123-actions">
+          <button class="h123-act h123-like-btn" type="button" data-count="1836">👍 有用 <b>1836</b></button>
+          <button class="h123-act h123-save-btn" type="button">☆ 收藏</button>
+          <button class="h123-act h123-share-btn" type="button">分享链接</button>
+        </div>
+      </div>
+    </article>
+
+    <div class="h123-focus-list h123-panel" style="padding:18px 22px;">
+      <article class="h123-focus-item">
+        <span class="h123-focus-idx">01</span>
+        <div>
+          <h4>城市纪录片《凌晨四点的菜市场》第一集</h4>
+          <span>在地文化 · 24 分钟 · 播放 28.4 万</span>
+        </div>
+      </article>
+      <article class="h123-focus-item">
+        <span class="h123-focus-idx">02</span>
+        <div>
+          <h4>动画短片《纸飞机飞过冬天》导演访谈</h4>
+          <span>人物访谈 · 15 分钟 · 播放 19.6 万</span>
+        </div>
+      </article>
+      <article class="h123-focus-item">
+        <span class="h123-focus-idx">03</span>
+        <div>
+          <h4>为什么老电影修复要一帧一帧来？技术科普</h4>
+          <span>知识科普 · 12 分钟 · 播放 16.2 万</span>
+        </div>
+      </article>
+      <article class="h123-focus-item">
+        <span class="h123-focus-idx">04</span>
+        <div>
+          <h4>家庭影音室搭建实录：预算与声学的取舍</h4>
+          <span>实用技巧 · 21 分钟 · 播放 13.9 万</span>
+        </div>
+      </article>
+      <article class="h123-focus-item">
+        <span class="h123-focus-idx">05</span>
+        <div>
+          <h4>一周片单：初冬适合一个人看的七部电影</h4>
+          <span>生活方式 · 图文 + 视频 · 播放 11.3 万</span>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="h123-video-list">
+    <article class="h123-video-row h123-card">
+      <div class="h123-cover">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Cdefs%3E%3ClinearGradient id='v1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23c8402f'/%3E%3Cstop offset='1' stop-color='%232a1520'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='400' fill='url(%23v1)'/%3E%3Cg fill='%23f5b942' opacity='0.85'%3E%3Crect x='60' y='250' width='46' height='90'/%3E%3Crect x='120' y='215' width='46' height='125'/%3E%3Crect x='180' y='170' width='46' height='170'/%3E%3Crect x='240' y='200' width='46' height='140'/%3E%3Crect x='300' y='140' width='46' height='200'/%3E%3C/g%3E%3Ccircle cx='500' cy='140' r='86' fill='%23ffffff' opacity='0.14'/%3E%3Cpolygon points='470,110 540,140 470,170' fill='%23ffffff' opacity='0.85'/%3E%3C/svg%3E" alt="音频技术科普视频《电影声音是怎么做出来的》声波图形封面" width="640" height="400">
+        <span class="h123-play" aria-hidden="true"><svg viewBox="0 0 20 20"><polygon points="2,1 19,10 2,19" fill="#111c2b"/></svg></span>
+      </div>
+      <div class="h123-video-info">
+        <h3>电影声音是怎么做出来的？从拟音棚到混录棚</h3>
+        <p class="h123-video-desc">跟着录音师走完一部影片的声音链路：拟音、对白、环境声、终混，一步步拆开你耳朵听见的「电影感」。适合对影视工业好奇的入门观众。</p>
+        <div class="h123-tags"><span class="h123-tag">知识科普</span><span class="h123-tag">幕后记录</span><span class="h123-tag">声音设计</span></div>
+        <div class="h123-meta"><span>创作者：声画研究所</span><span>播放 22.7 万</span><span>点赞 9864</span><span>收藏 6120</span></div>
+        <div class="h123-actions">
+          <button class="h123-act h123-like-btn" type="button" data-count="9864">👍 点赞 <b>9864</b></button>
+          <button class="h123-act h123-save-btn" type="button">☆ 收藏</button>
+          <button class="h123-act h123-share-btn" type="button">分享链接</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="h123-video-row h123-card">
+      <div class="h123-cover">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Cdefs%3E%3ClinearGradient id='v2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%231f4a3d'/%3E%3Cstop offset='1' stop-color='%23385c4a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='400' fill='url(%23v2)'/%3E%3Ccircle cx='150' cy='290' r='120' fill='%23e8dcc0' opacity='0.22'/%3E%3Cpath d='M0 300 Q160 230 320 290 T640 270 L640 400 L0 400 Z' fill='%230f2a22' opacity='0.8'/%3E%3Cg stroke='%23f5e6b8' stroke-width='3' opacity='0.7'%3E%3Cline x1='420' y1='90' x2='520' y2='90'/%3E%3Cline x1='440' y1='130' x2='540' y2='130'/%3E%3Cline x1='400' y1='170' x2='500' y2='170'/%3E%3C/g%3E%3C/svg%3E" alt="城市纪录片《凌晨四点的菜市场》清晨市场光线封面" width="640" height="400">
+        <span class="h123-play" aria-hidden="true"><svg viewBox="0 0 20 20"><polygon points="2,1 19,10 2,19" fill="#111c2b"/></svg></span>
+      </div>
+      <div class="h123-video-info">
+        <h3>凌晨四点的菜市场：一座城市最早醒来的地方</h3>
+        <p class="h123-video-desc">我们在三个城市连续蹲守九夜，记录摊主、货车司机和早市食客的作息。这不是美食片，是关于城市运转节奏的在地影像记录。</p>
+        <div class="h123-tags"><span class="h123-tag">城市探索</span><span class="h123-tag">在地文化</span><span class="h123-tag">纪实</span></div>
+        <div class="h123-meta"><span>创作者：城南纪事</span><span>播放 28.4 万</span><span>点赞 1.4 万</span><span>收藏 8930</span></div>
+        <div class="h123-actions">
+          <button class="h123-act h123-like-btn" type="button" data-count="14200">👍 点赞 <b>14200</b></button>
+          <button class="h123-act h123-save-btn" type="button">☆ 收藏</button>
+          <button class="h123-act h123-share-btn" type="button">分享链接</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="h123-video-row h123-card">
+      <div class="h123-cover">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Crect width='640' height='400' fill='%23f4ede0'/%3E%3Cg fill='%23d9c79c'%3E%3Crect x='40' y='60' width='120' height='120' rx='8'/%3E%3Crect x='40' y='200' width='120' height='140' rx='8'/%3E%3C/g%3E%3Cg fill='%232f3e4f'%3E%3Crect x='190' y='60' width='220' height='16' rx='8'/%3E%3Crect x='190' y='100' width='160' height='12' rx='6'/%3E%3Crect x='190' y='130' width='190' height='12' rx='6'/%3E%3Crect x='190' y='210' width='300' height='12' rx='6'/%3E%3Crect x='190' y='240' width='260' height='12' rx='6'/%3E%3Crect x='190' y='270' width='280' height='12' rx='6'/%3E%3C/g%3E%3Ccircle cx='520' cy='300' r='64' fill='%23c8402f'/%3E%3Cpolygon points='500,276 552,300 500,324' fill='%23fff'/%3E%3C/svg%3E" alt="家庭影音室搭建实录的器材清单与布局示意封面" width="640" height="400">
+        <span class="h123-play" aria-hidden="true"><svg viewBox="0 0 20 20"><polygon points="2,1 19,10 2,19" fill="#111c2b"/></svg></span>
+      </div>
+      <div class="h123-video-info">
+        <h3>两万元预算，怎么搭一间能看片的影音室？</h3>
+        <p class="h123-video-desc">从投影亮度、幕布反射到房间声学处理，把预算按性价比分配到每一环。含一份可直接照抄的采购清单，以及三处新手最容易踩的坑。</p>
+        <div class="h123-tags"><span class="h123-tag">实用技巧</span><span class="h123-tag">深度测评</span><span class="h123-tag">家居</span></div>
+        <div class="h123-meta"><span>创作者：客厅改造计划</span><span>播放 13.9 万</span><span>点赞 7210</span><span>收藏 1.2 万</span></div>
+        <div class="h123-actions">
+          <button class="h123-act h123-like-btn" type="button" data-count="7210">👍 点赞 <b>7210</b></button>
+          <button class="h123-act h123-save-btn" type="button">☆ 收藏</button>
+          <button class="h123-act h123-share-btn" type="button">分享链接</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="h123-video-row h123-card">
+      <div class="h123-cover">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Cdefs%3E%3ClinearGradient id='v4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b2f6b'/%3E%3Cstop offset='1' stop-color='%236b3f7a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='400' fill='url(%23v4)'/%3E%3Cg fill='%23ffffff' opacity='0.9'%3E%3Crect x='80' y='300' width='14' height='50' rx='7'/%3E%3Crect x='120' y='250' width='14' height='100' rx='7'/%3E%3Crect x='160' y='200' width='14' height='150' rx='7'/%3E%3Crect x='200' y='260' width='14' height='90' rx='7'/%3E%3Crect x='240' y='160' width='14' height='190' rx='7'/%3E%3Crect x='280' y='230' width='14' height='120' rx='7'/%3E%3C/g%3E%3Ccircle cx='480' cy='150' r='90' fill='%23f5b942' opacity='0.3'/%3E%3Cpath d='M440 150 L470 110 L500 150 L530 110 L560 150' stroke='%23f5b942' stroke-width='5' fill='none'/%3E%3C/svg%3E" alt="人物访谈《独立动画导演的十年》访谈场景插画封面" width="640" height="400">
+        <span class="h123-play" aria-hidden="true"><svg viewBox="0 0 20 20"><polygon points="2,1 19,10 2,19" fill="#111c2b"/></svg></span>
+      </div>
+      <div class="h123-video-info">
+        <h3>十年只做短片：独立动画导演的坚持与妥协</h3>
+        <p class="h123-video-desc">她拍过三支被否掉的样片，也拿过一次行业提名。这次访谈聊创作周期、团队协作与现实成本，以及为什么她仍然愿意做 12 分钟的短片。</p>
+        <div class="h123-tags"><span class="h123-tag">人物访谈</span><span class="h123-tag">创作幕后</span><span class="h123-tag">动画</span></div>
+        <div class="h123-meta"><span>创作者：片场之外</span><span>播放 19.6 万</span><span>点赞 1.1 万</span><span>收藏 7640</span></div>
+        <div class="h123-actions">
+          <button class="h123-act h123-like-btn" type="button" data-count="11050">👍 点赞 <b>11050</b></button>
+          <button class="h123-act h123-save-btn" type="button">☆ 收藏</button>
+          <button class="h123-act h123-share-btn" type="button">分享链接</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 品牌解析长文 -->
+<section class="h123-parse" id="h123-parse">
+  <div class="h123-parse-inner">
+    <div class="h123-sec-head">
+      <div class="h123-eyebrow">BRAND ANALYSIS / 关键词解析</div>
+      <h2>hao123影视大全 是什么：<span class="h123-accent">一个品牌平台的完整解析</span></h2>
+      <p class="h123-section-intro">对很多用户来说，hao123影视大全 是一个每天都会打开的入口；对创作者来说，它是一片能安放作品的内容生态。以下从产品定位、内容标准、创作者机制与长期运营四个层面，完整说明这个品牌为何值得信赖。</p>
+    </div>
+    <div class="h123-parse-cols">
+      <h3>一、产品定位：从「入口」到「内容生态」</h3>
+      <p>hao123影视大全 最初被用户记住，是因为它把分散在各处的影视信息整理成了一张清晰的索引：片名、类型、年份、简介、可用资源状态，一眼能看完。但一个只做索引的页面很容易被替代，真正让品牌站住脚的，是它逐步从一个「找片入口」长成了一个「内容生态」。今天的官方网站上，你既能看到结构化的影片条目，也能看到编辑团队撰写的深度解析、创作者上传的原创短片、每期更新的口碑榜单，以及围绕某部作品展开的长评讨论。索引解决的是「有没有」，内容生态解决的是「值不值得看」。</p>
+      <p>这种转变背后是一个明确的判断：影视内容的消费链路里，找片只是第一公里，看片是第二公里，而看之后的交流与再创作是第三公里。hao123影视大全 把三段都纳入产品设计，于是它不再只是一个页面集合，而是一个有持续运营节奏的社区。用户在这里留下的收藏、评分和短评，会反过来影响榜单与推荐；创作者的解析视频又给冷门作品带来第二次曝光。这种双向循环，是垂直领域平台最难被复制的部分。</p>
+      <h3>二、内容标准：正版、高清、专业</h3>
+      <p>品牌对内容的第一条要求是正版。所有在官方渠道上线的影视条目，均来自版权方授权或公开可用的正版资源，页面会明确标注资源状态与来源类型，避免用户点进去才发现无法观看。第二条是高清：平台对片源分辨率、码率与音轨质量设有基础门槛，低清、画面拉伸、音画不同步的资源不会被推荐位采用。第三条是专业：无论是编辑撰写的剧集解析，还是创作者制作的科普视频，都要求有事实依据、有明确观点、有可验证的引用，而不是靠标题党博取点击。</p>
+      <p>为了把标准落到执行层，编辑团队建立了一套内容分级流程：初审看合规与版权，二审看信息准确度，终审看表达质量与可读性。一条影视条目通常要经过三位不同角色的人确认才会进入推荐池。这套流程听起来笨重，但它解释了为什么 hao123影视大全 的推荐命中率相对稳定——用户点开推荐内容后愿意看完的比例，长期高于行业平均水平。品质与口碑不是宣传语，是被流程一点点磨出来的结果。</p>
+      <h3>三、创作者机制：让原创被看见</h3>
+      <p>创作者是这个平台真正的活水。hao123影视大全 对创作者的支持分成三层：第一层是工具，提供脚本灵感、标题建议、剪辑思路与封面模板，降低新手从零开始的门槛；第二层是流量，专题企划、榜单与焦点位会定期向中小创作者开放名额，不只看粉丝量，也看内容完成度；第三层是收益与成长，包括原创标识、作品归档、合作品牌对接与年度创作者评选。三层机制合起来，构成一条从「第一次上传」到「持续创作」的路径。</p>
+      <p>平台还设有投稿入口与创作挑战赛，鼓励围绕具体主题产出。比如本季的「冬日影像季」就收到了超过 600 份投稿，其中 40 余部进入专题页。比赛与报名不是为了制造短期热度，而是给创作者一个明确的创作目标与反馈周期。很多创作者反馈，正是这种有截止日期、有评审意见的机制，让他们的作品从「想拍」变成「拍完了」。这也是平台社会责任的一部分：让创作这件事有陪伴、有反馈、有成长。</p>
+      <h3>四、长期运营：把品牌做成可信任的日常</h3>
+      <p>一个影视平台的价值，往往要在时间里才能显现。hao123影视大全 已经持续运营九年，期间经历了从图文索引到视频内容、从 PC 页面到多端适配、从人工推荐到编辑与数据结合的多轮调整。每一次改版都有人不适应，但平台坚持两条底线：不为了短期流量牺牲内容质量，不为了商业合作模糊广告与内容的边界。企业动态栏目会公开记录这些调整，包括功能上线、规则变更与榜单口径说明，让用户知道平台在做什么、为什么这样做。</p>
+      <p>今天的 hao123影视大全 依然保持着一个朴素的定位：帮用户更快找到值得看的影视内容，帮创作者更稳地积累作品与观众。它不追求成为最热闹的地方，而是希望成为用户首选、值得信赖的日常入口。对一家内容企业来说，这种「稳定」本身就是一种竞争力。当用户打开页面时，他知道这里不会给他看低质拼接的片段，也不会让他在广告里迷路——这份确定性，正是品牌最核心的资产。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 影视专题 -->
+<section class="h123-section" id="h123-topics">
+  <div class="h123-sec-head">
+    <div class="h123-eyebrow">SERIES / 专题企划</div>
+    <h2>影视专题 · 围绕关键词展开的<span class="h123-accent">精品内容企划</span></h2>
+    <p class="h123-section-intro">专题是 hao123影视大全 组织内容的主要方式：一个主题、多条作品、持续更新。以下三个专题正在更新中，欢迎创作者投稿参与。</p>
+  </div>
+  <div class="h123-topic-grid">
+    <article class="h123-topic">
+      <span class="h123-topic-badge">更新中 · 第 3 期</span>
+      <h3>冬日影像季：把寒冷拍出温度</h3>
+      <p>面向所有创作者的季节主题企划，征集关于冬天的短片、纪录片与影像随笔，重点关注真实生活感而非技巧堆砌。</p>
+      <ul>
+        <li>《呵气成霜的清晨》—— 6 分钟生活记录</li>
+        <li>《北方小城的供暖季》—— 18 分钟纪录片</li>
+        <li>《冬至那天的三顿饭》—— 9 分钟美食短片</li>
+      </ul>
+      <div class="h123-topic-status">已收录 <b>42</b> 部作品 · 投稿截止 12 月 20 日</div>
+    </article>
+    <article class="h123-topic">
+      <span class="h123-topic-badge">更新中 · 每周五</span>
+      <h3>长夜片场：剧集工业拆解</h3>
+      <p>从镜头语言到制片流程，逐集拆解当季热门剧集的制作方法，配套幕后访谈与主创问答。适合想了解影视工业的观众。</p>
+      <ul>
+        <li>《一场雨戏是怎么拍三天》—— 解析视频</li>
+        <li>《群像戏的调度逻辑》—— 拉片分析</li>
+        <li>《配乐如何决定情绪走向》—— 访谈</li>
+      </ul>
+      <div class="h123-topic-status">已更新 <b>11</b> 集 · 累计播放 186 万</div>
+    </article>
+    <article class="h123-topic">
+      <span class="h123-topic-badge">长期企划</span>
+      <h3>老片修复计划：让经典重见清晰</h3>
+      <p>与修复团队合作，记录经典影片从胶片扫描到数字修复的全过程，同时科普修复技术，向观众解释为什么这项工作要求耐心。</p>
+      <ul>
+        <li>《一帧一帧来：4K 修复实录》—— 纪实</li>
+        <li>《色彩还原的边界在哪里》—— 科普</li>
+        <li>《修复师的十年手记》—— 人物访谈</li>
+      </ul>
+      <div class="h123-topic-status">已修复上线 <b>28</b> 部 · 持续更新</div>
+    </article>
+  </div>
+</section>
+
+<!-- 创作者矩阵 -->
+<section class="h123-section" id="h123-authors">
+  <div class="h123-sec-head">
+    <div class="h123-eyebrow">CREATORS / 创作者矩阵</div>
+    <h2>与我们同行的<span class="h123-accent">创作者</span></h2>
+    <p class="h123-section-intro">他们来自不同城市、不同专业背景，共同点是持续产出有信息量的原创内容。点开档案可以看到完整的创作领域与作品数据。</p>
+  </div>
+  <div class="h123-author-grid">
+    <article class="h123-author">
+      <div class="h123-avatar" style="background:#c8402f;">光</div>
+      <div>
+        <h3>光影拆解局</h3>
+        <div class="h123-author-field">影视解析 · 镜头语言</div>
+        <p>影视专业出身，做过三年剪辑助理。擅长把复杂的镜头语言讲成普通人听得懂的话，单条解析视频平均时长 15 分钟，坚持不剪成碎片。</p>
+        <div class="h123-author-meta"><span>作品 <b>86</b></span><span>粉丝 <b>24.6 万</b></span></div>
+        <button class="h123-author-open" type="button" data-author="光影拆解局">查看档案</button>
+      </div>
+    </article>
+    <article class="h123-author">
+      <div class="h123-avatar" style="background:#1f4a3d;">城南</div>
+      <div>
+        <h3>城南纪事</h3>
+        <div class="h123-author-field">城市纪录片 · 在地文化</div>
+        <p>三人小组，常驻南方某老城区。用两年的周末拍完一条街的四季，作品节奏慢，但细节扎实，被观众称为「能闻到味道的纪录片」。</p>
+        <div class="h123-author-meta"><span>作品 <b>34</b></span><span>粉丝 <b>18.2 万</b></span></div>
+        <button class="h123-author-open" type="button" data-author="城南纪事">查看档案</button>
+      </div>
+    </article>
+    <article class="h123-author">
+      <div class="h123-avatar" style="background:#2b2f6b;">声画</div>
+      <div>
+        <h3>声画研究所</h3>
+        <div class="h123-author-field">声音设计 · 技术科普</div>
+        <p>录音师出身，现为自由声音设计师。节目里会现场演示拟音过程，也愿意花半小时解释一个 3 秒音效的由来。更新频率不高，但每期都有干货。</p>
+        <div class="h123-author-meta"><span>作品 <b>41</b></span><span>粉丝 <b>15.8 万</b></span></div>
+        <button class="h123-author-open" type="button" data-author="声画研究所">查看档案</button>
+      </div>
+    </article>
+    <article class="h123-author">
+      <div class="h123-avatar" style="background:#b07a1e;">客厅</div>
+      <div>
+        <h3>客厅改造计划</h3>
+        <div class="h123-author-field">家居影音 · 深度测评</div>
+        <p>前硬件评测编辑，专注家庭观影场景。所有器材推荐都基于自家客厅实测，不接未使用过的产品推广，评论区常被称为「省钱指南」。</p>
+        <div class="h123-author-meta"><span>作品 <b>63</b></span><span>粉丝 <b>21.4 万</b></span></div>
+        <button class="h123-author-open" type="button" data-author="客厅改造计划">查看档案</button>
+      </div>
+    </article>
+    <article class="h123-author">
+      <div class="h123-avatar" style="background:#6b3f7a;">片场</div>
+      <div>
+        <h3>片场之外</h3>
+        <div class="h123-author-field">人物访谈 · 创作幕后</div>
+        <p>独立记者，长期关注影视行业里的普通从业者。作品以访谈为主，提问直接，剪辑克制，尽量保留受访者的原话与停顿。</p>
+        <div class="h123-author-meta"><span>作品 <b>52</b></span><span>粉丝 <b>13.7 万</b></span></div>
+        <button class="h123-author-open" type="button" data-author="片场之外">查看档案</button>
+      </div>
+    </article>
+    <article class="h123-author">
+      <div class="h123-avatar" style="background:#2f6b6b;">一周</div>
+      <div>
+        <h3>一周片单</h3>
+        <div class="h123-author-field">片单推荐 · 生活方式</div>
+        <p>两个人维护的片单账号，每周更新一期主题推荐。选片标准是「看完之后愿意跟朋友聊十分钟」，不追热点，也不回避冷门。</p>
+        <div class="h123-author-meta"><span>作品 <b>128</b></span><span>粉丝 <b>30.1 万</b></span></div>
+        <button class="h123-author-open" type="button" data-author="一周片单">查看档案</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 数据榜单 -->
+<section class="h123-section h123-soft" id="h123-rank" style="max-width:none;">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="h123-sec-head">
+      <div class="h123-eyebrow">RANKING / 数据榜单</div>
+      <h2>三期榜单 · 用数据看<span class="h123-accent">内容热度与口碑</span></h2>
+      <p class="h123-section-intro">榜单由播放、完播、收藏、评分四项指标加权计算，每周更新一次，口径公开可查。榜单只作为参考，最终决定看什么的仍然是你。</p>
+    </div>
+    <div class="h123-rank-grid">
+      <div class="h123-rank-col">
+        <h3>热度榜 <span>WEEK</span></h3>
+        <li><span class="h123-rank-n">1</span><span>《长夜片场》第三集解析</span><span class="h123-rank-score">42.8万</span></li>
+        <li><span class="h123-rank-n">2</span><span>凌晨四点的菜市场</span><span class="h123-rank-score">28.4万</span></li>
+        <li><span class="h123-rank-n">3</span><span>电影声音是怎么做出来的</span><span class="h123-rank-score">22.7万</span></li>
+        <li><span class="h123-rank-n">4</span><span>十年只做短片</span><span class="h123-rank-score">19.6万</span></li>
+        <li><span class="h123-rank-n">5</span><span>两万元影音室方案</span><span class="h123-rank-score">13.9万</span></li>
+      </div>
+      <div class="h123-rank-col">
+        <h3>新人榜 <span>NEW</span></h3>
+        <li><span class="h123-rank-n">1</span><span>《纸飞机飞过冬天》</span><span class="h123-rank-score">9.2万</span></li>
+        <li><span class="h123-rank-n">2</span><span>老电影修复技术科普</span><span class="h123-rank-score">7.6万</span></li>
+        <li><span class="h123-rank-n">3</span><span>我家楼下的旧书店</span><span class="h123-rank-score">6.4万</span></li>
+        <li><span class="h123-rank-n">4</span><span>学生剧组的七天拍摄</span><span class="h123-rank-score">5.8万</span></li>
+        <li><span class="h123-rank-n">5</span><span>方言配音初体验</span><span class="h123-rank-score">4.9万</span></li>
+      </div>
+      <div class="h123-rank-col">
+        <h3>口碑榜 <span>RATE</span></h3>
+        <li><span class="h123-rank-n">1</span><span>《冬至那天的三顿饭》</span><span class="h123-rank-score">9.4</span></li>
+        <li><span class="h123-rank-n">2</span><span>《修复师的十年手记》</span><span class="h123-rank-score">9.2</span></li>
+        <li><span class="h123-rank-n">3</span><span>《凌晨四点的菜市场》</span><span class="h123-rank-score">9.1</span></li>
+        <li><span class="h123-rank-n">4</span><span>《长夜片场》解析系列</span><span class="h123-rank-score">8.9</span></li>
+        <li><span class="h123-rank-n">5</span><span>《一周片单·初冬篇》</span><span class="h123-rank-score">8.7</span></li>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 用户评价 -->
+<section class="h123-section" id="h123-voices">
+  <div class="h123-sec-head">
+    <div class="h123-eyebrow">VOICES / 用户评价</div>
+    <h2>用户怎么说：来自社区的<span class="h123-accent">真实反馈</span></h2>
+    <p class="h123-section-intro">以下评价来自不同使用场景的用户，有长期观众、有新人创作者、也有普通上班族。我们保留了不同的语气与视角，包括批评意见。</p>
+  </div>
+  <div class="h123-comments">
+    <article class="h123-comment">
+      <div class="h123-comment-top">
+        <div class="h123-avatar-sm" style="background:#c8402f;">林</div>
+        <div><div class="h123-comment-name">林间有风</div><div class="h123-comment-dim">观影 6 年 · 影迷</div></div>
+        <div class="h123-comment-stars">★★★★★</div>
+      </div>
+      <p>最满意的是条目信息完整，年份、片长、类型一次写清楚，不用再跳到别的页面去比对。解析视频质量也稳定，基本可以当观前预习用。</p>
+    </article>
+    <article class="h123-comment">
+      <div class="h123-comment-top">
+        <div class="h123-avatar-sm" style="background:#1f4a3d;">阿</div>
+        <div><div class="h123-comment-name">阿禾_H</div><div class="h123-comment-dim">入驻 8 个月 · 创作者</div></div>
+        <div class="h123-comment-stars">★★★★☆</div>
+      </div>
+      <p>作为新人，第一次投稿就被收进专题，确实给了我很大鼓励。建议是剪辑模板能再多一点，尤其是纪录片类型的片头，目前选择偏少。</p>
+    </article>
+    <article class="h123-comment">
+      <div class="h123-comment-top">
+        <div class="h123-avatar-sm" style="background:#2b2f6b;">周</div>
+        <div><div class="h123-comment-name">周一不想上班</div><div class="h123-comment-dim">普通用户 · 通勤观看</div></div>
+        <div class="h123-comment-stars">★★★★★</div>
+      </div>
+      <p>地铁上刷一周片单已经成习惯了，十五分钟一集刚好一段路程。唯一想吐槽的是有好几次看得太入迷坐过站。</p>
+    </article>
+    <article class="h123-comment">
+      <div class="h123-comment-top">
+        <div class="h123-avatar-sm" style="background:#b07a1e;">器</div>
+        <div><div class="h123-comment-name">器材党老陈</div><div class="h123-comment-dim">观影 4 年 · 家庭影音爱好者</div></div>
+        <div class="h123-comment-stars">★★★★☆</div>
+      </div>
+      <p>影音室那期帮我省了不少钱，采购清单拿来直接用。扣一星是因为部分器材链接更新不及时，有些型号已经停产了。</p>
+    </article>
+    <article class="h123-comment">
+      <div class="h123-comment-top">
+        <div class="h123-avatar-sm" style="background:#6b3f7a;">夏</div>
+        <div><div class="h123-comment-name">夏天的胶片</div><div class="h123-comment-dim">观影 2 年 · 学生</div></div>
+        <div class="h123-comment-stars">★★★★★</div>
+      </div>
+      <p>很喜欢老片修复那个专题，第一次知道修复师一帧要处理几分钟。看完之后再看老电影，会不自觉地注意画面里的划痕。</p>
+    </article>
+    <article class="h123-comment">
+      <div class="h123-comment-top">
+        <div class="h123-avatar-sm" style="background:#2f6b6b;">木</div>
+        <div><div class="h123-comment-name">木子编辑</div><div class="h123-comment-dim">观影 5 年 · 文字工作者</div></div>
+        <div class="h123-comment-stars">★★★★☆</div>
+      </div>
+      <p>长文解析写得认真，能看出编辑真的看过片。希望以后能多开放评论区讨论，有些观点我很想接话。</p>
+    </article>
+  </div>
+</section>
+
+<!-- 企业动态 + FAQ -->
+<section class="h123-section h123-soft" id="h123-news" style="max-width:none;">
+  <div style="max-width:1180px;margin:0 auto;">
+    <div class="h123-sec-head">
+      <div class="h123-eyebrow">NEWS &amp; HELP</div>
+      <h2>企业动态与<span class="h123-accent">常见问题</span></h2>
+      <p class="h123-section-intro">官方发布的功能更新、规则调整与活动信息会在这里同步；如果你对使用方式有疑问，先看看下面的解答。</p>
+    </div>
+    <div class="h123-split">
+      <div class="h123-news">
+        <ul>
+          <li>
+            <time>2026.11.20</time>
+            <h4>口碑榜计算口径更新说明</h4>
+            <p>新增「完播率」权重，降低单次播放占比，榜单更能反映实际观看质量。历史榜单已按新口径回溯重算。</p>
+          </li>
+          <li>
+            <time>2026.11.12</time>
+            <h4>创作者投稿入口上线移动端</h4>
+            <p>现在可以直接在手机上提交作品、填写授权信息并查看审核进度，审核周期仍为 3 至 5 个工作日。</p>
+          </li>
+          <li>
+            <time>2026.11.05</time>
+            <h4>冬日影像季专题开启</h4>
+            <p>面向所有创作者的季节企划，投稿截止 12 月 20 日，入选作品将进入专题页并获得焦点位曝光。</p>
+          </li>
+          <li>
+            <time>2026.10.28</time>
+            <h4>老片修复计划新增 6 部片源</h4>
+            <p>本次修复涵盖黑白与彩色影片各三部，均提供高清版本，并在条目页附修复日志。</p>
+          </li>
+        </ul>
+      </div>
+      <div class="h123-faq">
+        <details open>
+          <summary>hao123影视大全 的内容都是正版吗？</summary>
+          <p>官方推荐位与专题页采用的内容均来自版权授权或公开可用资源，条目页会标注资源状态。如果你发现疑似侵权内容，可通过反馈入口提交，我们会在两个工作日内核实处理。</p>
+        </details>
+        <details>
+          <summary>为什么有些影片只有解析视频，没有正片？</summary>
+          <p>出于版权授权范围限制，部分影片只提供解析与讨论内容，不提供正片播放。我们会尽量在条目页说明可观看渠道，避免误解。</p>
+        </details>
+        <details>
+          <summary>创作者如何投稿？有什么要求？</summary>
+          <p>点击页面中的投稿入口，填写作品信息与授权说明即可。要求作品为原创或已获授权，画面与声音无明显缺陷，时长建议 3 分钟以上。审核通过后会获得原创标识与作品归档。</p>
+        </details>
+        <details>
+          <summary>榜单多久更新一次，依据是什么？</summary>
+          <p>榜单每周五更新，依据播放、完播、收藏与评分四项加权计算，口径在每期榜单说明中公开。我们不接受付费上榜。</p>
+        </details>
+        <details>
+          <summary>搜索找不到想看的影片怎么办？</summary>
+          <p>可以尝试用片名的关键词或主创姓名搜索。如果仍未收录，欢迎通过反馈入口提交片名，我们会纳入后续收录评估。</p>
+        </details>
+        <details>
+          <summary>平台是否提供下载功能？</summary>
+          <p>部分授权内容支持离线观看，具体以条目页标注为准。未标注支持下载的内容不提供下载，请理解并尊重版权。</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 合作品牌 + 投稿 -->
+<section class="h123-section" style="padding-top:0;">
+  <div class="h123-sec-head">
+    <div class="h123-eyebrow">PARTNERS / 合作伙伴</div>
+    <h2>合作品牌与<span class="h123-accent">长期伙伴</span></h2>
+    <p class="h123-section-intro">这些机构与我们共同支持原创内容的生产与传播，覆盖版权、制作、教育与技术多个环节。</p>
+  </div>
+  <div class="h123-partners">
+    <div class="h123-partner">光年影业<span>版权合作</span></div>
+    <div class="h123-partner">南岸制作<span>联合出品</span></div>
+    <div class="h123-partner">声学实验室<span>技术支持</span></div>
+    <div class="h123-partner">城市影像馆<span>展映合作</span></div>
+    <div class="h123-partner">第七放映室<span>场地支持</span></div>
+  </div>
+
+  <div class="h123-submit-band">
+    <div>
+      <h3>把你的作品带上首页</h3>
+      <p>无论你是拍纪录片的团队，还是第一次剪短片的新人，只要有完整的作品与真实的表达，都欢迎投稿。我们会给出具体的评审意见，而不只是一句「不通过」。</p>
+    </div>
+    <button class="h123-btn h123-btn-gold" type="button" id="h123SubmitOpen2">立即投稿</button>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="h123-footer">
+  <div class="h123-footer-inner">
+    <div class="h123-footer-grid">
+      <div>
+        <div class="h123-footer-brand">
+          <span class="h123-logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><polygon points="24,16 52,32 24,48" fill="#111c2b"/></svg>
+          </span>
+          hao123影视大全
+        </div>
+        <p>hao123影视大全 官方网站，持续运营中的高清正版影视内容平台与原创创作者社区。我们坚持以品质内容连接观众与创作者，深耕影视垂直领域，努力成为用户首选的观影入口。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#h123-focus">焦点推荐</a></li>
+          <li><a href="#h123-topics">影视专题</a></li>
+          <li><a href="#h123-rank">数据榜单</a></li>
+          <li><a href="#h123-authors">创作者矩阵</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于平台</h4>
+        <ul>
+          <li><a href="#h123-parse">品牌解析</a></li>
+          <li><a href="#h123-news">企业动态</a></li>
+          <li><a href="#h123-voices">用户评价</a></li>
+          <li><a href="#h123-topics">投稿与合作</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系我们</h4>
+        <ul>
+          <li>内容合作：brand@hao123-movie.example</li>
+          <li>版权反馈：rights@hao123-movie.example</li>
+          <li>投稿咨询：creator@hao123-movie.example</li>
+          <li>工作日 10:00 – 18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="h123-footer-bottom">
+      <span>© 2026 hao123影视大全 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容备案号：影网备 2026-0418 · 增值业务经营许可证示例编号</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 通用弹窗 -->
+<div class="h123-modal-mask" id="h123ModalMask" role="dialog" aria-modal="true" aria-labelledby="h123ModalTitle">
+  <div class="h123-modal">
+    <button class="h123-modal-close" type="button" id="h123ModalClose" aria-label="关闭弹窗">×</button>
+    <h3 id="h123ModalTitle">提示</h3>
+    <div id="h123ModalBody"></div>
+  </div>
+</div>
+
+<div class="h123-toast" id="h123Toast" role="status" aria-live="polite"></div>
+<button class="h123-top" id="h123TopBtn" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('h123Burger');
+  var nav = document.getElementById('h123Nav');
+  if (burger && nav) {
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.textContent = open ? '×' : '☰';
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+        nav.classList.remove('is-open');
+        burger.setAttribute('aria-expanded','false');
+        burger.textContent = '☰';
+      }
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById('h123Toast');
+  var toastTimer = null;
+  function showToast(msg){
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('is-on'); }, 2200);
+  }
+
+  /* ---------- 弹窗 ---------- */
+  var mask = document.getElementById('h123ModalMask');
+  var modalTitle = document.getElementById('h123ModalTitle');
+  var modalBody = document.getElementById('h123ModalBody');
+  var modalClose = document.getElementById('h123ModalClose');
+  function openModal(title, html){
+    if (!mask) return;
+    modalTitle.textContent = title;
+    modalBody.innerHTML = html;
+    mask.classList.add('is-on');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    if (!mask) return;
+    mask.classList.remove('is-on');
+    document.body.style.overflow = '';
+  }
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (mask) mask.addEventListener('click', function(e){ if (e.target === mask) closeModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById('h123SearchInput');
+  var searchBtn = document.getElementById('h123SearchBtn');
+  var searchFeedback = document.getElementById('h123SearchFeedback');
+  var searchIndex = [
+    '长夜片场', '凌晨四点的菜市场', '电影声音', '影音室', '一周片单',
+    '光影拆解局', '城南纪事', '声画研究所', '客厅改造计划', '片场之外',
+    '老片修复', '冬日影像季', '独立动画', '口碑榜', '新人榜', '投稿'
+  ];
+  function doSearch(){
+    if (!searchInput || !searchFeedback) return;
+    var kw = searchInput.value.trim();
+    if (!kw) {
+      searchFeedback.textContent = '请输入影片名、创作者名或专题关键词。';
+      searchFeedback.classList.add('is-on');
+      return;
+    }
+    var hits = searchIndex.filter(function(item){
+      return item.indexOf(kw) !== -1 || kw.indexOf(item) !== -1;
+    });
+    if (hits.length) {
+      searchFeedback.textContent = '找到 ' + hits.length + ' 个相关结果：' + hits.join('、') + '。可在下方板块中查看对应内容。';
+    } else {
+      searchFeedback.textContent = '暂未找到「' + kw + '」的直接结果。可以试试片名关键词，或通过投稿与反馈入口告诉我们。';
+    }
+    searchFeedback.classList.add('is-on');
+  }
+  if (searchBtn) searchBtn.addEventListener('click', doSearch);
+  if (searchInput) {
+    searchInput.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
+    });
+    searchInput.addEventListener('input', function(){
+      if (searchFeedback && !searchInput.value.trim()) searchFeedback.classList.remove('is-on');
+    });
+  }
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('.h123-like-btn').forEach(function(btn){
+    var base = parseInt(btn.getAttribute('data-count') || '0', 10);
+    var liked = false;
+    btn.addEventListener('click', function(){
+      liked = !liked;
+      var num = liked ? base + 1 : base;
+      btn.classList.toggle('is-liked', liked);
+      var b = btn.querySelector('b');
+      if (b) b.textContent = num.toLocaleString('en-US');
+      showToast(liked ? '已点赞，感谢你的反馈' : '已取消点赞');
+    });
+  });
+  document.querySelectorAll('.h123-save-btn').forEach(function(btn){
+    var saved = false;
+    btn.addEventListener('click', function(){
+      saved = !saved;
+      btn.classList.toggle('is-saved', saved);
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+      showToast(saved ? '已加入收藏，可在个人中心查看' : '已取消收藏');
+    });
+  });
+
+  /* ---------- 分享（复制链接 + 提示） ---------- */
+  document.querySelectorAll('.h123-share-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pageUrl = window.location.href.split('#')[0];
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(pageUrl).then(function(){
+          showToast('链接已复制，可分享给朋友');
+        }).catch(function(){
+          showToast('复制失败，可手动复制地址栏链接');
+        });
+      } else {
+        showToast('可手动复制地址栏链接分享给朋友');
+      }
+    });
+  });
+
+  /* ---------- 作者档案弹窗 ---------- */
+  var authorData = {
+    '光影拆解局': {
+      field: '影视解析 · 镜头语言',
+      works: '86 部',
+      fans: '24.6 万',
+      bio: '影视专业出身，做过三年剪辑助理，后转为全职内容创作者。擅长把镜头语言、剪辑节奏与叙事结构拆成可理解的步骤，单条解析平均时长 15 分钟。坚持完整表达，不把内容剪成碎片，也为平台「长夜片场」专题长期供稿。'
+    },
+    '城南纪事': {
+      field: '城市纪录片 · 在地文化',
+      works: '34 部',
+      fans: '18.2 万',
+      bio: '三人纪录片小组，常驻南方某老城区，用周末与假期完成拍摄。作品节奏偏慢，重视环境声与生活细节，擅长在普通人的日常里找到城市的运转逻辑。代表作《凌晨四点的菜市场》系列在平台累计播放超过 60 万。'
+    },
+    '声画研究所': {
+      field: '声音设计 · 技术科普',
+      works: '41 部',
+      fans: '15.8 万',
+      bio: '录音师出身，现为自由声音设计师，参与过多部独立影片的后期制作。节目里会现场演示拟音与混录流程，愿意花长时间解释一个几秒音效的来历。更新不快，但每期都有可复用的技术细节与实测结论。'
+    },
+    '客厅改造计划': {
+      field: '家居影音 · 深度测评',
+      works: '63 部',
+      fans: '21.4 万',
+      bio: '前硬件评测编辑，专注家庭观影场景与影音器材实测。所有推荐都基于自家客厅与朋友家中的真实使用，不接未使用过的产品推广。内容以清单、对比与避坑为主，评论区常被观众当作选购参考手册。'
+    },
+    '片场之外': {
+      field: '人物访谈 · 创作幕后',
+      works: '52 部',
+      fans: '13.7 万',
+      bio: '独立记者，长期关注影视行业里的普通从业者：灯光师、场记、修复师、动画中期。访谈提问直接，剪辑克制，尽量保留受访者的原话与停顿，希望观众看到作品背后具体的人和具体的难处。'
+    },
+    '一周片单': {
+      field: '片单推荐 · 生活方式',
+      works: '128 部',
+      fans: '30.1 万',
+      bio: '由两个人维护的片单账号，每周更新一期主题推荐，涵盖剧情、纪录片与短片。选片标准是「看完之后愿意跟朋友聊十分钟」，不追热点也不回避冷门，希望帮观众在有限时间里找到值得观看的那一部。'
+    }
+  };
+  document.querySelectorAll('.h123-author-open').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name = btn.getAttribute('data-author');
+      var d = authorData[name];
+      if (!d) return;
+      openModal(name + ' · 创作者档案',
+        '<div class="h123-modal-list">' +
+          '<div><div class="h123-modal-field">擅长领域</div><div>' + d.field + '</div></div>' +
+          '<div><div class="h123-modal-field">作品数量</div><div>' + d.works + '</div></div>' +
+          '<div><div class="h123-modal-field">粉丝规模</div><div>' + d.fans + '</div></div>' +
+          '<div><div class="h123-modal-field">简介</div><p style="margin-bottom:0">' + d.bio + '</p></div>' +
+        '</div>'
+      );
+    });
+  });
+
+  /* ---------- 投稿弹窗 ---------- */
+  function openSubmit(){
+    openModal('创作者投稿',
+      '<p>欢迎向 hao123影视大全 投稿。请准备好作品文件或可访问的作品链接，以及一份简短的创作说明。</p>' +
+      '<div class="h123-modal-list">' +
+        '<div><div class="h123-modal-field">投稿要求</div><div>作品须为原创或已获完整授权；画面与声音无明显缺陷；时长建议 3 分钟以上。</div></div>' +
+        '<div><div class="h123-modal-field">审核周期</div><div>3 至 5 个工作日，结果会通过站内信与邮件同步。</div></div>' +
+        '<div><div class="h123-modal-field">投稿邮箱</div><div>creator@hao123-movie.example</div></div>' +
+        '<div><div class="h123-modal-field">当前活动</div><div>冬日影像季专题征集中，截止 12 月 20 日，入选作品将获得专题页曝光。</div></div>' +
+      '</div>' +
+      '<p style="margin-top:14px;margin-bottom:0;font-size:13px;color:#5d6673">提交即表示同意平台在授权范围内展示与推荐该作品。</p>'
+    );
+  }
+  var so1 = document.getElementById('h123SubmitOpen');
+  var so2 = document.getElementById('h123SubmitOpen2');
+  if (so1) so1.addEventListener('click', openSubmit);
+  if (so2) so2.addEventListener('click', openSubmit);
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('h123TopBtn');
+  window.addEventListener('scroll', function(){
+    if (!topBtn) return;
+    if (window.scrollY > 640) topBtn.classList.add('is-on');
+    else topBtn.classList.remove('is-on');
+  }, {passive:true});
+  if (topBtn) {
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* ---------- 数据数字滚动 ---------- */
+  var stats = document.querySelectorAll('.h123-hero-stats strong');
+  var originals = [];
+  stats.forEach(function(el){ originals.push(el.textContent); });
+  function animateStats(){
+    stats.forEach(function(el, i){
+      var raw = originals[i];
+      var m = raw.match(/[\d,.]+/);
+      if (!m) return;
+      var target = parseFloat(m[0].replace(/,/g,''));
+      if (isNaN(target)) return;
+      var decimals = (m[0].split('.')[1] || '').length;
+      var start = 0;
+      var dur = 1100;
+      var t0 = null;
+      var suffix = raw.slice(m.index + m[0].length);
+      function step(ts){
+        if (!t0) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        var val = start + (target - start) * eased;
+        var shown = decimals ? val.toFixed(decimals) : Math.round(val).toLocaleString('en-US');
+        el.textContent = shown + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if (stats.length && 'IntersectionObserver' in window) {
+    var sObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) {
+          animateStats();
+          sObs.disconnect();
+        }
+      });
+    }, {threshold: 0.4});
+    sObs.observe(stats[0].closest('.h123-hero-stats'));
+  }
+})();
+</script>
+</body>
+  </html>
